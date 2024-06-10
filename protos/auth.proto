@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option go_package = "/genprotos";
+
+package protos;
+
+service CandidateService {
+    rpc Register(RegisterReq) returns (RegisterResp){};
+    rpc Login(LoginReq) returns (LoginResp){};
+    rpc Profile(GetProfileReq) returns (GetProfileResp){};
+};
+
+message RegisterReq {
+    string id = 1;
+    string username = 2;
+    string password = 3;
+    string email = 4;
+};
+
+message RegisterResp {
+    string id = 1;
+    string username = 2;
+    string password = 3;
+    string email = 4;
+};
+
+message LoginReq {
+    string email = 1;
+    string password = 2; 
+};
+
+message LoginResp {
+    string id = 1;
+    string username = 2;
+    string password = 3;
+    string email = 4;
+};
+
+message GetProfileReq {
+    string id = 1;
+};
+
+message GetProfileResp {
+    string id = 1;
+    string username = 2;
+    string password = 3;
+    string email = 4;
+};
