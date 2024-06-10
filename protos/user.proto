@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option go_package = "/genprotos";
 
-import "protos/common.proto";
+import "RestaurantRservationSubmodule/protos/common.proto";
 
 package protos;
 

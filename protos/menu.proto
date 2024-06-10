@@ -4,8 +4,8 @@ option go_package = "genprotos/";
 
 package protos;
 
-import "protos/restaurant.proto";
-import "protos/common.proto";
+import "RestaurantRservationSubmodule/protos/restaurant.proto";
+import "RestaurantRservationSubmodule/protos/common.proto";
 
 service MenuService {
   rpc Create (MenuReq) returns (Menu) {}
