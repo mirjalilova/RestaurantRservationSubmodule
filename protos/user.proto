@@ -6,7 +6,7 @@ import "RestaurantRservationSubmodule/protos/common.proto";
 
 package protos;
 
-service CandidateService {
+service UserService {
     rpc GetById(UserGetByIdReq) returns (UserGetByIdResp){};
     rpc Create(UserCreateReq) returns (UserGetByIdResp){};
     rpc Update(UserUpdateReq) returns (UserGetByIdResp){};

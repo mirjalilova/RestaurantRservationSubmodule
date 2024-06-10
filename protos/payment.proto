@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option go_package = "/genprotos";
+
+import "RestaurantRservationSubmodule/protos/common.proto";
+
+package protos;
+
+service PaymentService {
+    rpc GetById(PaymentGetByIdReq) returns (PaymentGetByIdResp){};
+    rpc Create(PaymentCreateReq) returns (PaymentGetByIdResp){};
+    rpc Update(PaymentUpdateReq) returns (PaymentGetByIdResp){};
+    rpc Delete(PaymentGetByIdReq) returns (Void){};
+};
+
+message PaymentGetByIdReq {
+    string id = 1;
+};
+
+message PaymentGetByIdResp {
+    string id = 1;
+    string reservation_id = 2;
+    float amount = 3;
+    string payment_method = 4;
+    string payment_status = 5;
+};
+
+message PaymentCreateReq {
+    string reservation_id = 2;
+    float amount = 3;
+    string payment_method = 4;
+    string payment_status = 5;
+};
+
+message PaymentUpdateReq {
+    string id = 1;
+    PaymentCreateReq Payment = 2;
+};
+
+message PaymentGetAllResp {
+    repeated PaymentGetByIdResp Payments = 1;
+    int32 count = 2;
+};
