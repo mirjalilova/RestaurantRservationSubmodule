@@ -8,7 +8,6 @@ service PaymentService {
     rpc GetById(PaymentGetByIdReq) returns (PaymentGetByIdResp){};
     rpc Create(PaymentCreateReq) returns (PaymentGetByIdResp){};
     rpc Update(PaymentUpdateReq) returns (PaymentGetByIdResp){};
-    rpc Delete(PaymentGetByIdReq) returns (Void){};
 };
 
 message PaymentGetByIdReq {
@@ -24,10 +23,10 @@ message PaymentGetByIdResp {
 };
 
 message PaymentCreateReq {
-    string reservation_id = 2;
-    float amount = 3;
-    string payment_method = 4;
-    string payment_status = 5;
+    string reservation_id = 1;
+    float amount = 2;
+    string payment_method = 3;
+    string payment_status = 4;
 };
 
 message PaymentUpdateReq {
@@ -39,8 +38,6 @@ message PaymentGetAllResp {
     repeated PaymentGetByIdResp Payments = 1;
     int32 count = 2;
 };
-
-message Void {}
 
 message GetByIdReq {
   string id = 1;
