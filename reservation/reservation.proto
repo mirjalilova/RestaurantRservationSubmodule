@@ -11,7 +11,7 @@ import "common.proto";
 service ReservationService {
   rpc Create (ReservationReq) returns (Reservation) {}
   rpc Get (GetByIdReq) returns (ReservationRes) {}
-  rpc GetAll (GetAllReservationRes) returns (GetAllReservationRes) {}
+  rpc GetAll (GetAllReservationReq) returns (GetAllReservationRes) {}
   rpc Update (ReservationUpdate) returns (Reservation) {}
   rpc Delete (GetByIdReq) returns (Void) {}
 }
