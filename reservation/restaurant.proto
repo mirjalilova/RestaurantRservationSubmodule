@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-option go_package = "/genprotos";
+option go_package = "genproto/reservation";
 
-package protos;
+package reservation;
 
-import "RestaurantRservationSubmodule/protos/common.proto";
+import "common.proto";
 
 service RestaurantService {
   rpc Create (RestaurantReq) returns (Restaurant) {}

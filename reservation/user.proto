@@ -1,16 +1,12 @@
 syntax = "proto3";
 
-option go_package = "/genprotos";
+option go_package = "genproto/reservation";
 
-import "RestaurantRservationSubmodule/protos/common.proto";
-
-package protos;
+package reservation;
 
 service UserService {
     rpc GetById(UserGetByIdReq) returns (UserGetByIdResp){};
     rpc Create(UserCreateReq) returns (UserGetByIdResp){};
-    rpc Update(UserUpdateReq) returns (UserGetByIdResp){};
-    rpc Delete(UserGetByIdReq) returns (Void){};
 };
 
 
@@ -29,11 +25,6 @@ message UserCreateReq {
     string username = 1;
     string email = 2;
     string password = 3;
-};
-
-message UserUpdateReq {
-    string id = 1;
-    UserCreateReq user = 2;
 };
 
 message UserGetAllResp {

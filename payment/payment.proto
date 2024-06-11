@@ -1,10 +1,8 @@
 syntax = "proto3";
 
-option go_package = "/genprotos";
+option go_package = "genproto/payment";
 
-import "RestaurantRservationSubmodule/protos/common.proto";
-
-package protos;
+package payment;
 
 service PaymentService {
     rpc GetById(PaymentGetByIdReq) returns (PaymentGetByIdResp){};
@@ -41,3 +39,14 @@ message PaymentGetAllResp {
     repeated PaymentGetByIdResp Payments = 1;
     int32 count = 2;
 };
+
+message Void {}
+
+message GetByIdReq {
+  string id = 1;
+}
+
+message Filter {
+  int32 limit = 1;
+  int32 offset = 2;
+}

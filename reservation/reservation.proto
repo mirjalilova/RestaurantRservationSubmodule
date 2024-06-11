@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-option go_package = "/genprotos";
+option go_package = "genproto/reservation";
 
-package protos;
+package reservation;
 
-import "RestaurantRservationSubmodule/protos/restaurant.proto";
-import "RestaurantRservationSubmodule/protos/user.proto";
-import "RestaurantRservationSubmodule/protos/common.proto";
+import "restaurant.proto";
+import "user.proto";
+import "common.proto";
 
 service ReservationService {
   rpc Create (ReservationReq) returns (Reservation) {}
@@ -33,7 +33,7 @@ message ReservationReq {
 
 message ReservationRes {
   string      id = 1;
-  UserGetByIdReq        user = 2;
+  UserGetByIdReq  user = 2;
   Restaurant  restaurant = 3;
   string      reservation_time = 4;
   string      status = 5;

@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-option go_package = "genprotos/";
+option go_package = "genproto/reservation";
 
-package protos;
+package reservation;
 
-import "protos/common.proto"; 
-import "protos/menu.proto"; 
-import "protos/reservation.proto"; 
+import "common.proto"; 
+import "menu.proto"; 
+import "reservation.proto"; 
 
 
 service ReservationOrderService {

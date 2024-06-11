@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-option go_package = "/genprotos";
+option go_package = "genproto/reservation";
 
-package protos;
+package reservation;
 
 message Void {}
 
