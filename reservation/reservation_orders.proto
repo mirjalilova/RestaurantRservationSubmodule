@@ -12,7 +12,7 @@ import "reservation.proto";
 service ReservationOrderService {
     rpc Create (ReservationOrderReq) returns (ReservationOrderRes) {}
     rpc Get (GetByIdReq) returns (ReservationOrderRes) {}
-    rpc GetAll (GetAllReservationOrderRes) returns (GetAllReservationOrderRes) {}
+    rpc GetAll (GetAllReservationOrderReq) returns (GetAllReservationOrderRes) {}
     rpc Update (ReservationOrderUpdate) returns ( ReservationOrderRes) {}
     rpc Delete (GetByIdReq) returns (Void) {}
 }
@@ -43,20 +43,3 @@ message ReservationOrderUpdate {
     string menu_item_id = 3;
     string quantity = 4;
 }
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
