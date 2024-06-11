@@ -32,11 +32,11 @@ message ReservationReq {
 }
 
 message ReservationRes {
-  string          id = 1;
-  UserGetByIdReq  user = 2;
-  Restaurant      restaurant = 3;
-  string          reservation_time = 4;
-  string          status = 5;
+  string           id = 1;
+  UserGetByIdResp  user = 2;
+  Restaurant       restaurant = 3;
+  string           reservation_time = 4;
+  string           status = 5;
 }
 
 message ReservationUpdate {
