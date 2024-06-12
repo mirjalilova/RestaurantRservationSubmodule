@@ -21,6 +21,12 @@ message UserGetByIdResp {
     string password = 4;
 };
 
+message UserResp {
+    string id = 1;
+    string username = 2;
+    string email = 3;
+}
+
 message UserCreateReq {
     string username = 1;
     string email = 2;
