@@ -14,7 +14,16 @@ service ReservationService {
   rpc GetAll (GetAllReservationReq) returns (GetAllReservationRes) {}
   rpc Update (ReservationUpdate) returns (Reservation) {}
   rpc Delete (GetByIdReq) returns (Void) {}
+  rpc CheckTime (CheckTimeReq) returns () {}
 }
+
+message CheckTimeReq {
+  string time = 1;
+};
+
+message CheckTimeResp {
+  bool is_booked = 1;
+};
 
 message Reservation {
   string  id = 1;
@@ -22,14 +31,14 @@ message Reservation {
   string  restaurant_id = 3;
   string  reservation_time = 4;
   string  status = 5;
-}
+};
 
 message ReservationReq {
   string  user_id = 1;
   string  restaurant_id = 2;
   string  reservation_time = 3;
   string  status = 4;
-}
+};
 
 message ReservationRes {
   string           id = 1;
@@ -37,7 +46,7 @@ message ReservationRes {
   Restaurant       restaurant = 3;
   string           reservation_time = 4;
   string           status = 5;
-}
+};
 
 message ReservationUpdate {
   ReservationReq updateReservation = 1;
@@ -47,8 +56,8 @@ message ReservationUpdate {
 message GetAllReservationReq {
   string user_id = 1;
   Filter filter = 2;
-}
+};
 
 message GetAllReservationRes {
   repeated ReservationRes reservation = 1;
-}
+};
