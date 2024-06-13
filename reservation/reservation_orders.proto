@@ -13,7 +13,7 @@ service ReservationOrderService {
     rpc Create (ReservationOrderReq) returns (ReservationOrderRes) {}
     rpc Get (GetByIdReq) returns (ReservationOrderRes) {}
     rpc GetAll (GetAllReservationOrderReq) returns (GetAllReservationOrderRes) {}
-    rpc Update (ReservationOrderUpdate) returns ( ReservationOrderReq) {}
+    rpc Update (ReservationOrderUpdateReq) returns ( ReservationOrderRes) {}
     rpc Delete (GetByIdReq) returns (Void) {}
 }
 
@@ -30,6 +30,12 @@ message ReservationOrderRes {
     string quantity = 4;
 }
 
+message ReservationOrderUpdate {
+    string reservation_id = 1;
+    string menu_item_id = 2;
+    string quantity = 3;
+} 
+
 message GetAllReservationOrderReq {
     float price = 1;
     Filter filter = 2;
@@ -37,13 +43,8 @@ message GetAllReservationOrderReq {
 message GetAllReservationOrderRes {
     repeated ReservationOrderRes reservation_order = 1;
 }
-
-message ReservationOrderBody {
-    string reservation_id = 1;
-    string menu_item_id = 2;
-    string quantity = 3;
-}
-message ReservationOrderUpdate {
+message ReservationOrderUpdateReq {
     GetByIdReq id = 1;
-    ReservationOrderBody update_body = 2;
+    ReservationOrderUpdate update = 2;
+    
 }
