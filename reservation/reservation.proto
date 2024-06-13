@@ -19,6 +19,7 @@ service ReservationService {
 
 message CheckTimeReq {
   string time = 1;
+  string restauran_id = 2;
 };
 
 message CheckTimeResp {
