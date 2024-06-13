@@ -14,7 +14,7 @@ service ReservationService {
   rpc GetAll (GetAllReservationReq) returns (GetAllReservationRes) {}
   rpc Update (ReservationUpdate) returns (Reservation) {}
   rpc Delete (GetByIdReq) returns (Void) {}
-  rpc CheckTime (CheckTimeReq) returns () {}
+  rpc CheckTime (CheckTimeReq) returns (CheckTimeResp) {}
 }
 
 message CheckTimeReq {
